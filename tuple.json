@@ -1,0 +1,42 @@
+[
+  {
+      "namespace": "Actor",
+      "object": "heartbeat-user",
+      "relation": "user",
+      "subject_id": "zhang@heartbeat-med.de"
+  },
+  {
+    "namespace": "Group",
+    "object": "heartbeat-developer-group",
+    "relation": "members",
+    "subject_id": "zhang@heartbeat-med.de"
+  },
+  {
+    "namespace": "Organisation",
+    "object": "heartbeat",
+    "relation": "reader",
+    "subject_set":{
+      "namespace":"Group",
+      "object":"heartbeat-developer-group",
+      "relation": "members"
+    }
+  },
+  {
+    "namespace": "Folder",
+    "object": "heartbeat-permission",
+    "relation": "parent",
+    "subject_set":{
+      "namespace":"Organisation",
+      "object":"heartbeat"
+    }
+  },
+  {
+    "namespace": "File",
+    "object": "heartbeat-permission-read",
+    "relation": "parent",
+    "subject_set":{
+      "namespace":"Folder",
+      "object":"heartbeat-permission"
+    }
+  }
+]
