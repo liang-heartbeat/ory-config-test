@@ -1,0 +1,42 @@
+[
+  {
+    "namespace": "Actor",
+    "object": "heartbeat-user",
+    "relation": "user",
+    "subject_id": "8c94cb84-0275-4722-871c-5f7327772d85"
+  },
+  {
+    "namespace": "Group",
+    "object": "heartbeat-developer-group",
+    "relation": "members",
+    "subject_id": "8c94cb84-0275-4722-871c-5f7327772d85"
+  },
+  {
+    "namespace": "Organisation",
+    "object": "heartbeat",
+    "relation": "reader",
+    "subject_set": {
+      "namespace": "Group",
+      "object": "heartbeat-developer-group",
+      "relation": "members"
+    }
+  },
+  {
+    "namespace": "Folder",
+    "object": "heartbeat-permission",
+    "relation": "parent",
+    "subject_set": {
+      "namespace": "Organisation",
+      "object": "heartbeat"
+    }
+  },
+  {
+    "namespace": "File",
+    "object": "heartbeat-permission-read",
+    "relation": "parent",
+    "subject_set": {
+      "namespace": "Folder",
+      "object": "heartbeat-permission"
+    }
+  }
+]

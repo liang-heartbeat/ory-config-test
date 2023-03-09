@@ -23,31 +23,31 @@ It is used to record ory configuration file.
   # map[limit:map[] namespaces:map[location:https://storage.googleapis.com/bac-gcs-production/c8d4d5931bbd24126d563debb5e8d8d0c232022afa4eefd40e641f6ed56e1e6ab9b04da48e951fb77c3078cfebe4b13665a9b421f683422a2a4df8b9033feabc.bin]]
 
 ```
-3. Update relationship definition. It is defined in the `tuple.json`. It is used for initialized the first actor permission in ory. Orange should support setup relationship in UI in future.
+3. Update relationship definition. It is defined in the `relationship.json`. It is used for initializing the first actor permission in ory. Orange should support setup relationships in UI for following users and organisations.
 
 4. Upload latest relationship to ory by command.
 
 ```shell
   # 1. create relationship
-  ory create relationships relationships.json
+  ory create relationships relationship.json
   # outputs:
   # NAMESPACE	    OBJECT				               RELATION NAME SUBJECT
-  # Actor		      heartbeat-user			         user		       zhang@heartbeat-med.de
-  # Group		      heartbeat-developer-group	   members		   zhang@heartbeat-med.de
+  # Actor		      heartbeat-user			         user		       8c94cb84-0275-4722-871c-5f7327772d85
+  # Group		      heartbeat-developer-group	   members		   8c94cb84-0275-4722-871c-5f7327772d85
   # Organisation	heartbeat			               reader		     Group:heartbeat-developer-group#members
   # Folder		    heartbeat-permission		     parent		     Organisation:heartbeat
   # File		      heartbeat-permission-read	   parent		     Folder:heartbeat-permission
 
   # 2. check permission
-  ory is allowed zhang@heartbeat-med.de read Folder heartbeat-permission
+  ory is allowed 8c94cb84-0275-4722-871c-5f7327772d85 read Folder heartbeat-permission
   # outputs:
   # Allowed
 ```
-5. <b>TODO:</b> Is it correct way to define permission rule
+5. In code aspect, could use sdk PermissionApi, RelationshipApi to check permission and maintain permission relationship.
 
-6. TODO: Use ory sdk PermissionApi or REST API to check permission
+6. <b>TODO:</b> Is it correct way to define permission rule
 
-7. TODO: Identity: how to identify Ojbect or Subject. For example user actor `subject_id`
+7. TODO: Identification: how to identify Object (or resource) or Subject. For example user actor `subject_id`. Another senario is about patient record. Based on care pathway concept, it is compound of several layers of code(data). Some code could be shared among care pathways, and as I understand this shared code could be a question of survey. How to control permissions of it? setting permission to a question level? ( It is based on my understanding of care pathway concept. Maybe the real concept is different from mine.)
 
-8. TODO: How to do permission check? Do we store all the permissions for one user in cookie after user login? Or do we call API to check permission each time when user request to access resources?
+8. TODO: How to do permission check? Do we encode all the permissions of one user in jwt token format and store it cookie after user login? Or do we call API to check permission each time when user request to access specific resources?
 
