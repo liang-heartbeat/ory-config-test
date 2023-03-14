@@ -17,9 +17,6 @@ jobs:
         with:
           node-version: 18
       
-      - name: Setup Sudo
-        run: apt install sudo
-
       - name: Install ory
         run: ./oryInstall.sh
         shell: bash
