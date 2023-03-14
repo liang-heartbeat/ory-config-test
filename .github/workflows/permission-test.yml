@@ -16,14 +16,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: Install package
-        run: npm install
+      
+      - name: Setup Sudo
+        run: apt install sudo
 
       - name: Install ory
         run: ./oryInstall.sh
         shell: bash
-    
+
+      - name: Install package
+        run: npm install
+
       - name: Generate permission config file
         run: npm run generate
     
