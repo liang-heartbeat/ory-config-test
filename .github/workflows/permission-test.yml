@@ -18,8 +18,7 @@ jobs:
           node-version: 18
       
       - name: Install ory
-        run: ./oryInstall.sh
-        shell: bash
+        run: curl https://raw.githubusercontent.com/ory/meta/master/install.sh | sh -s ory
 
       - name: Install package
         run: npm install
