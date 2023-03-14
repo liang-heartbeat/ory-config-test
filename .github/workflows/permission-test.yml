@@ -3,7 +3,7 @@ name: permission test stuff
 on: [push]
 
 jobs:
-  Play with actions:
+  PlayAction:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
