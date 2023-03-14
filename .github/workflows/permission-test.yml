@@ -21,7 +21,10 @@ jobs:
         run: curl https://raw.githubusercontent.com/ory/meta/master/install.sh | sh -s ory
 
       - name: Move ory
-        run: sudo mv ./ory /usr/local/bin/
+        run: sudo mv ./bin/ory /usr/local/bin/
+
+      - name: Test ory
+        run: ory help
 
       - name: Install package
         run: npm install
