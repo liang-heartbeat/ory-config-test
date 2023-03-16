@@ -25,4 +25,4 @@ jobs:
         run: npm install
 
       - name: Generate permission config file
-        run: USER_NAME=$USER_NAME PASSWORD=$PASSWORD npm run generate
+        run: USER_NAME=${{env.USER_NAME}} PASSWORD=${{env.PASSWORD}} npm run generate
