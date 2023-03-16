@@ -1,0 +1,467 @@
+{
+  "id": "143f18ba-304b-40d2-8894-f479b1007961",
+  "revision_id": "443c55f1-4a51-4619-8ff0-eccbebc4866b",
+  "slug": "busy-hellman-zobf672u9m",
+  "services": {
+    "identity": {
+      "config": {
+        "cookies": {
+          "domain": "busy-hellman-zobf672u9m.projects.oryapis.com",
+          "path": "/",
+          "same_site": "Lax"
+        },
+        "courier": {
+          "smtp": {
+            "from_name": "ory-keto via Ory"
+          },
+          "templates": {
+            "recovery": {
+              "invalid": {
+                "email": {
+                  "body": {}
+                }
+              },
+              "valid": {
+                "email": {
+                  "body": {}
+                }
+              }
+            },
+            "recovery_code": {
+              "invalid": {
+                "email": {
+                  "body": {}
+                }
+              },
+              "valid": {
+                "email": {
+                  "body": {}
+                }
+              }
+            },
+            "verification": {
+              "invalid": {
+                "email": {
+                  "body": {}
+                }
+              },
+              "valid": {
+                "email": {
+                  "body": {}
+                }
+              }
+            },
+            "verification_code": {
+              "invalid": {
+                "email": {
+                  "body": {}
+                }
+              },
+              "valid": {
+                "email": {
+                  "body": {}
+                }
+              }
+            }
+          }
+        },
+        "feature_flags": {
+          "cacheable_sessions": false
+        },
+        "identity": {
+          "default_schema_id": "1b02668ac0ac42b7b3e47e76fa1cf53edebb200a04a6b0ee3bd3437c055739c5eeee26df11e9f90180160cc00f52b96870beac26967eb94aca2f2122105b1e9a",
+          "schemas": [
+            {
+              "id": "preset://username",
+              "url": "base64://ewogICIkaWQiOiAiaHR0cHM6Ly9zY2hlbWFzLm9yeS5zaC9wcmVzZXRzL2tyYXRvcy9pZGVudGl0eS51c2VybmFtZS5zY2hlbWEuanNvbiIsCiAgIiRzY2hlbWEiOiAiaHR0cDovL2pzb24tc2NoZW1hLm9yZy9kcmFmdC0wNy9zY2hlbWEjIiwKICAidGl0bGUiOiAiUGVyc29uIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgInRyYWl0cyI6IHsKICAgICAgInR5cGUiOiAib2JqZWN0IiwKICAgICAgInByb3BlcnRpZXMiOiB7CiAgICAgICAgInVzZXJuYW1lIjogewogICAgICAgICAgInR5cGUiOiAic3RyaW5nIiwKICAgICAgICAgICJ0aXRsZSI6ICJVc2VybmFtZSIsCiAgICAgICAgICAibWF4TGVuZ3RoIjogMTAwLAogICAgICAgICAgIm9yeS5zaC9rcmF0b3MiOiB7CiAgICAgICAgICAgICJjcmVkZW50aWFscyI6IHsKICAgICAgICAgICAgICAicGFzc3dvcmQiOiB7CiAgICAgICAgICAgICAgICAiaWRlbnRpZmllciI6IHRydWUKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICJ3ZWJhdXRobiI6IHsKICAgICAgICAgICAgICAgICJpZGVudGlmaWVyIjogdHJ1ZQogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgInRvdHAiOiB7CiAgICAgICAgICAgICAgICAiYWNjb3VudF9uYW1lIjogdHJ1ZQogICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgfQogICAgICAgIH0KICAgICAgfSwKICAgICAgInJlcXVpcmVkIjogWwogICAgICAgICJ1c2VybmFtZSIKICAgICAgXSwKICAgICAgImFkZGl0aW9uYWxQcm9wZXJ0aWVzIjogZmFsc2UKICAgIH0KICB9Cn0K"
+            },
+            {
+              "id": "7177a0bc4eb59e9e5c1b2e503efd81568bfc22dbe393633b1a2112d80447e112d87c7c6729a5a96c652012bb378cfa9d0e71283b4ce2781df455e84cb11b8390",
+              "url": "https://storage.googleapis.com/bac-gcs-production/7177a0bc4eb59e9e5c1b2e503efd81568bfc22dbe393633b1a2112d80447e112d87c7c6729a5a96c652012bb378cfa9d0e71283b4ce2781df455e84cb11b8390.json"
+            },
+            {
+              "id": "e491d23875f1329c874b8344445799ee214cd6708ac8f8974f0bfa505472ef94930db2a6e62e51aefa2a67928715868c11d45795d5ea25c43bdec28b0c551fab",
+              "url": "https://storage.googleapis.com/bac-gcs-production/e491d23875f1329c874b8344445799ee214cd6708ac8f8974f0bfa505472ef94930db2a6e62e51aefa2a67928715868c11d45795d5ea25c43bdec28b0c551fab.json"
+            },
+            {
+              "id": "preset://email",
+              "url": "base64://ewogICIkaWQiOiAiaHR0cHM6Ly9zY2hlbWFzLm9yeS5zaC9wcmVzZXRzL2tyYXRvcy9pZGVudGl0eS5lbWFpbC5zY2hlbWEuanNvbiIsCiAgIiRzY2hlbWEiOiAiaHR0cDovL2pzb24tc2NoZW1hLm9yZy9kcmFmdC0wNy9zY2hlbWEjIiwKICAidGl0bGUiOiAiUGVyc29uIiwKICAidHlwZSI6ICJvYmplY3QiLAogICJwcm9wZXJ0aWVzIjogewogICAgInRyYWl0cyI6IHsKICAgICAgInR5cGUiOiAib2JqZWN0IiwKICAgICAgInByb3BlcnRpZXMiOiB7CiAgICAgICAgImVtYWlsIjogewogICAgICAgICAgInR5cGUiOiAic3RyaW5nIiwKICAgICAgICAgICJmb3JtYXQiOiAiZW1haWwiLAogICAgICAgICAgInRpdGxlIjogIkUtTWFpbCIsCiAgICAgICAgICAib3J5LnNoL2tyYXRvcyI6IHsKICAgICAgICAgICAgImNyZWRlbnRpYWxzIjogewogICAgICAgICAgICAgICJwYXNzd29yZCI6IHsKICAgICAgICAgICAgICAgICJpZGVudGlmaWVyIjogdHJ1ZQogICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgIndlYmF1dGhuIjogewogICAgICAgICAgICAgICAgImlkZW50aWZpZXIiOiB0cnVlCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAidG90cCI6IHsKICAgICAgICAgICAgICAgICJhY2NvdW50X25hbWUiOiB0cnVlCiAgICAgICAgICAgICAgfQogICAgICAgICAgICB9LAogICAgICAgICAgICAicmVjb3ZlcnkiOiB7CiAgICAgICAgICAgICAgInZpYSI6ICJlbWFpbCIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgInZlcmlmaWNhdGlvbiI6IHsKICAgICAgICAgICAgICAidmlhIjogImVtYWlsIgogICAgICAgICAgICB9CiAgICAgICAgICB9LAogICAgICAgICAgIm1heExlbmd0aCI6IDMyMAogICAgICAgIH0KICAgICAgfSwKICAgICAgInJlcXVpcmVkIjogWwogICAgICAgICJlbWFpbCIKICAgICAgXSwKICAgICAgImFkZGl0aW9uYWxQcm9wZXJ0aWVzIjogZmFsc2UKICAgIH0KICB9Cn0K"
+            },
+            {
+              "id": "1b02668ac0ac42b7b3e47e76fa1cf53edebb200a04a6b0ee3bd3437c055739c5eeee26df11e9f90180160cc00f52b96870beac26967eb94aca2f2122105b1e9a",
+              "url": "https://storage.googleapis.com/bac-gcs-production/1b02668ac0ac42b7b3e47e76fa1cf53edebb200a04a6b0ee3bd3437c055739c5eeee26df11e9f90180160cc00f52b96870beac26967eb94aca2f2122105b1e9a.json"
+            }
+          ]
+        },
+        "oauth2_provider": {},
+        "selfservice": {
+          "allowed_return_urls": [],
+          "default_browser_return_url": "http://localhost:3000/admin",
+          "flows": {
+            "error": {
+              "ui_url": "/ui/error"
+            },
+            "login": {
+              "after": {
+                "hooks": [],
+                "oidc": {
+                  "hooks": []
+                },
+                "password": {
+                  "hooks": []
+                },
+                "webauthn": {
+                  "hooks": []
+                }
+              },
+              "before": {
+                "hooks": []
+              },
+              "lifespan": "30m0s",
+              "ui_url": "/ui/login"
+            },
+            "logout": {
+              "after": {}
+            },
+            "recovery": {
+              "after": {
+                "hooks": []
+              },
+              "before": {
+                "hooks": []
+              },
+              "enabled": false,
+              "lifespan": "30m0s",
+              "notify_unknown_recipients": false,
+              "ui_url": "/ui/recovery",
+              "use": "code"
+            },
+            "registration": {
+              "after": {
+                "hooks": [],
+                "oidc": {
+                  "hooks": [
+                    {
+                      "hook": "session"
+                    }
+                  ]
+                },
+                "password": {
+                  "hooks": [
+                    {
+                      "hook": "session"
+                    }
+                  ]
+                },
+                "webauthn": {
+                  "hooks": [
+                    {
+                      "hook": "session"
+                    }
+                  ]
+                }
+              },
+              "before": {
+                "hooks": []
+              },
+              "enabled": true,
+              "lifespan": "30m0s",
+              "ui_url": "/ui/registration"
+            },
+            "settings": {
+              "after": {
+                "hooks": [],
+                "password": {
+                  "hooks": []
+                },
+                "profile": {
+                  "hooks": []
+                }
+              },
+              "before": {
+                "hooks": []
+              },
+              "lifespan": "30m0s",
+              "privileged_session_max_age": "15m0s",
+              "required_aal": "highest_available",
+              "ui_url": "/ui/settings"
+            },
+            "verification": {
+              "after": {
+                "hooks": []
+              },
+              "before": {
+                "hooks": []
+              },
+              "enabled": false,
+              "lifespan": "30m0s",
+              "notify_unknown_recipients": false,
+              "ui_url": "/ui/verification",
+              "use": "code"
+            }
+          },
+          "methods": {
+            "code": {
+              "config": {
+                "lifespan": "15m0s"
+              },
+              "enabled": true
+            },
+            "link": {
+              "config": {
+                "base_url": "",
+                "lifespan": "15m0s"
+              },
+              "enabled": true
+            },
+            "lookup_secret": {
+              "enabled": false
+            },
+            "oidc": {
+              "config": {
+                "providers": []
+              },
+              "enabled": false
+            },
+            "password": {
+              "config": {
+                "haveibeenpwned_enabled": true,
+                "identifier_similarity_check_enabled": true,
+                "ignore_network_errors": true,
+                "max_breaches": 1,
+                "min_password_length": 8
+              },
+              "enabled": true
+            },
+            "profile": {
+              "enabled": true
+            },
+            "totp": {
+              "config": {
+                "issuer": "ory-keto"
+              },
+              "enabled": false
+            },
+            "webauthn": {
+              "config": {
+                "passwordless": false,
+                "rp": {
+                  "display_name": "ory-keto",
+                  "id": "busy-hellman-zobf672u9m.projects.oryapis.com",
+                  "origin": "https://busy-hellman-zobf672u9m.projects.oryapis.com"
+                }
+              },
+              "enabled": false
+            }
+          }
+        },
+        "serve": {
+          "admin": {
+            "base_url": "https://busy-hellman-zobf672u9m.projects.oryapis.com/",
+            "request_log": {
+              "disable_for_health": true
+            }
+          },
+          "public": {
+            "base_url": "https://busy-hellman-zobf672u9m.projects.oryapis.com/",
+            "cors": {
+              "enabled": false
+            },
+            "request_log": {
+              "disable_for_health": true
+            }
+          }
+        },
+        "session": {
+          "cookie": {
+            "domain": "busy-hellman-zobf672u9m.projects.oryapis.com",
+            "name": "ory_session_busyhellmanzobf672u9m",
+            "path": "/",
+            "persistent": false,
+            "same_site": "Lax"
+          },
+          "lifespan": "72h0m0s",
+          "whoami": {
+            "required_aal": "highest_available"
+          }
+        }
+      }
+    },
+    "permission": {
+      "config": {
+        "namespaces": {
+          "location": "https://storage.googleapis.com/bac-gcs-production/3394317bb867408c8ab0e6e3fbf4e6f2d8d24c7e2bbb8cca54f0378ed7271339f4cad72478cff1e44551a0c812d97a968932e74ff73e66a73e7b2fad4c98dddf.bin"
+        },
+        "limit": {}
+      }
+    },
+    "oauth2": {
+      "config": {
+        "clients": {
+          "http": {
+            "disallow_private_ip_ranges": true
+          }
+        },
+        "dev": true,
+        "hsm": {
+          "enabled": false
+        },
+        "oauth2": {
+          "client_credentials": {
+            "default_grant_allowed_scope": false
+          },
+          "exclude_not_before_claim": false,
+          "expose_internal_errors": true,
+          "grant": {
+            "jwt": {
+              "iat_optional": false,
+              "jti_optional": false,
+              "max_ttl": "720h0m0s"
+            }
+          },
+          "hashers": {
+            "algorithm": "pbkdf2",
+            "pbkdf2": {
+              "iterations": 10000
+            }
+          },
+          "pkce": {
+            "enforced": false,
+            "enforced_for_public_clients": false
+          },
+          "session": {
+            "encrypt_at_rest": true
+          }
+        },
+        "oidc": {
+          "dynamic_client_registration": {
+            "enabled": false
+          },
+          "subject_identifiers": {}
+        },
+        "serve": {
+          "admin": {
+            "cors": {
+              "allow_credentials": true,
+              "allowed_headers": [
+                "Accept",
+                "Content-Type",
+                "Content-Length",
+                "Accept-Language",
+                "Content-Language",
+                "Authorization"
+              ],
+              "allowed_methods": [
+                "POST",
+                "GET",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "CONNECT",
+                "HEAD",
+                "OPTIONS",
+                "TRACE"
+              ],
+              "debug": false,
+              "enabled": false,
+              "exposed_headers": [
+                "Cache-Control",
+                "Expires",
+                "Last-Modified",
+                "Pragma",
+                "Content-Length",
+                "Content-Language",
+                "Content-Type"
+              ],
+              "max_age": 0
+            },
+            "tls": {
+              "enabled": false
+            }
+          },
+          "cookies": {
+            "domain": "busy-hellman-zobf672u9m.projects.oryapis.com",
+            "names": {
+              "consent_csrf": "ory_oauth2_consent_csrf_busyhellmanzobf672u9m",
+              "login_csrf": "ory_oauth2_login_csrf_busyhellmanzobf672u9m",
+              "session_csrf": "ory_oauth2_session_csrf_busyhellmanzobf672u9m"
+            },
+            "same_site_legacy_workaround": false,
+            "same_site_mode": "Lax",
+            "secure": true
+          },
+          "public": {
+            "cors": {
+              "allow_credentials": true,
+              "allowed_headers": [
+                "Accept",
+                "Content-Type",
+                "Content-Length",
+                "Accept-Language",
+                "Content-Language",
+                "Authorization"
+              ],
+              "allowed_methods": [
+                "POST",
+                "GET",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "CONNECT",
+                "HEAD",
+                "OPTIONS",
+                "TRACE"
+              ],
+              "debug": false,
+              "enabled": false,
+              "exposed_headers": [
+                "Cache-Control",
+                "Expires",
+                "Last-Modified",
+                "Pragma",
+                "Content-Length",
+                "Content-Language",
+                "Content-Type"
+              ],
+              "max_age": 0
+            },
+            "tls": {
+              "enabled": false
+            }
+          },
+          "tls": {
+            "enabled": false
+          }
+        },
+        "strategies": {
+          "access_token": "opaque",
+          "scope": "wildcard"
+        },
+        "ttl": {
+          "access_token": "1h0m0s",
+          "auth_code": "30m0s",
+          "id_token": "1h0m0s",
+          "login_consent_request": "30m0s",
+          "refresh_token": "720h0m0s"
+        },
+        "urls": {
+          "consent": "/ui/consent",
+          "error": "/ui/error",
+          "login": "/ui/login",
+          "post_logout_redirect": "/oauth2/fallbacks/logout",
+          "self": {
+            "admin": "https://busy-hellman-zobf672u9m.projects.oryapis.com/admin",
+            "issuer": "https://busy-hellman-zobf672u9m.projects.oryapis.com",
+            "public": "https://busy-hellman-zobf672u9m.projects.oryapis.com"
+          }
+        },
+        "webfinger": {
+          "jwks": {},
+          "oidc_discovery": {}
+        }
+      }
+    }
+  },
+  "state": "running",
+  "name": "ory-keto"
+}

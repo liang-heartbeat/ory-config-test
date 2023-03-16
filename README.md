@@ -1,8 +1,31 @@
 # Ory
 
-It is used to record ory configuration file.
+It is used to control ory configuration files, such as identity schema, permission rules.
 
-## Identity schema
+## Update Configuration
+### Update identity schema
+
+<!-- TODO: -->
+### Update permission rule
+It only needs to update `./permission/permissionRule.ts` file, and pushes to github repo. The pipeline will take over other works.
+
+
+## Run Locally
+It uses ory project api to manage configuration. The way to make project api work is a little bit tricky. You could find relative passage in reference. The whole logic is in the `index.ts` file. If you want to play with it locally, please provide several env parameters and run 
+1. env 
+  - USER_NAME: The username which is used to login ory console (also is used in `ory auth` cli). 
+  - PASSWORD: The password which is used to login ory console (also is used in `ory auth` cli).
+  - PROJECTID: It could be found with `ory list projects` cli.
+  - PROJECT_SLUG: It could be found with `ory list projects` cli.
+2. run module
+```shell
+
+USER_NAME=${replace_USER_NAME} PASSWORD=${replace_PASSWORD} PROJECTID=${replace_PROJECTID} PROJECT_SLUG=${replace_PROJECT_SLUG} npm run update
+
+```
+## Configruation with Ory Commands
+The following are example ory commands about configuration management. It should be carefully used in production environment. It is recommended use github actions to maintain configurations because of version control.
+### Identity schema
 1. Define identity schema. It is defined in the `./identity/identity.json`. A tutorial for define identity schema. [Customize identity schemas](https://www.ory.sh/docs/kratos/manage-identities/customize-identity-schema)
 
 2. Update identity schema by ory command.[Creating identity schemas](https://www.ory.sh/docs/identities/model/manage-identity-schema)
@@ -19,10 +42,8 @@ ory patch identity-config {your-project-id} \
   --replace '/identity/schemas=[{"id":"{unique-schema-id}","url":"base64://'$schema'"}]'
 
 ```
-3. In order to control the 
 
-
-## Update permission rule and relationship
+### Update permission rule and relationship
 1. Update permission rule. It is defined in the `./permission/permissionRule.ts`.
 
 2. Upload latest permission rule to ory by command.
@@ -63,13 +84,6 @@ ory patch identity-config {your-project-id} \
   # outputs:
   # Allowed
 ```
-5. In code aspect, could use sdk PermissionApi, RelationshipApi to check permission and maintain permission relationship.
-
-6. <b>TODO:</b> Is it correct way to define permission rule
-
-7. TODO: Identification: how to identify Object (or resource) or Subject. For example user actor `subject_id`. Another senario is about patient record. Based on care pathway concept, it is compound of several layers of code(data). Some code could be shared among care pathways, and as I understand this shared code could be a question of survey. How to control permissions of it? setting permission to a question level? ( It is based on my understanding of care pathway concept. Maybe the real concept is different from mine.)
-
-8. TODO: How to do permission check? Do we encode all the permissions of one user in jwt token format and store it cookie after user login? Or do we call API to check permission each time when user request to access specific resources?
 
 9. references
 [Manage Ory Network projects using the API](https://www.ory.sh/projects-api-management-guide/)
