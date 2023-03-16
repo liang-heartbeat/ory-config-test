@@ -6,6 +6,7 @@ env:
   USER_NAME: '${{secrets.USER_NAME}}'
   PASSWORD: '${{secrets.PASSWORD}}'
   PROJECTID: '${{vars.PROJECTID}}'
+  PROJECT_SLUG: '${{vars.PROJECT_SLUG}}'
 
 jobs:
   PlayAction:

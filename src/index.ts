@@ -53,7 +53,7 @@ const encodePermissionRule = async () => {
 };
 
 // 2. encode new config file
-// 2.1 encode permission rule definition
+// 2.1 encode identity schema
 const encodeIdentitySchema = async () => {
   const filePath = path.resolve(__dirname, 'identity/identity.json');
   const encodedRule = await fs.promises.readFile(filePath, {

@@ -4,11 +4,9 @@ It is used to control ory configuration files, such as identity schema, permissi
 
 ## Update Configuration
 ### Update identity schema
-
-<!-- TODO: -->
+It only needs to update `./identity/identity.json` file, and pushes to github repo.
 ### Update permission rule
-It only needs to update `./permission/permissionRule.ts` file, and pushes to github repo. The pipeline will take over other works.
-
+It only needs to update `./permission/permissionRule.ts` file, and pushes to github repo.
 
 ## Run Locally
 It uses ory project api to manage configuration. The way to make project api work is a little bit tricky. You could find relative passage in reference. The whole logic is in the `index.ts` file. If you want to play with it locally, please provide several env parameters and run 
