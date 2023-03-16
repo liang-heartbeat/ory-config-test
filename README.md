@@ -15,10 +15,11 @@ It uses ory project api to manage configuration. The way to make project api wor
   - PASSWORD: The password which is used to login ory console (also is used in `ory auth` cli).
   - PROJECTID: It could be found with `ory list projects` cli.
   - PROJECT_SLUG: It could be found with `ory list projects` cli.
+  - PROJECT_NAME: It could be found in ory console ui page.
 2. run module
 ```shell
 
-USER_NAME=${replace_USER_NAME} PASSWORD=${replace_PASSWORD} PROJECTID=${replace_PROJECTID} PROJECT_SLUG=${replace_PROJECT_SLUG} npm run update
+USER_NAME=${replace_USER_NAME} PASSWORD=${replace_PASSWORD} PROJECTID=${replace_PROJECTID} PROJECT_SLUG=${replace_PROJECT_SLUG} PROJECT_NAME=${replace_PROJECT_NAME} npm run update
 
 ```
 ## Configruation with Ory Commands

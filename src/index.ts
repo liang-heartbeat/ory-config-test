@@ -8,6 +8,8 @@ const main = async () => {
   console.log(process.env.PASSWORD);
   console.log(process.env.PROJECTID);
   console.log(process.env.PROJECT_SLUG);
+  console.log(process.env.PROJECT_NAME);
+
 
   const sessionToken = await getSessionToken();
   const permissionRuleBase64 = await encodePermissionRule();
@@ -38,7 +40,6 @@ const getSessionToken = async () => {
       password: `${process.env.PASSWORD}`,
     }
   );
-  console.log(login.data)
   return login.data.session_token;
 };
 
@@ -75,7 +76,7 @@ const updateProjectConfig = async (
   await axios.put(
     `https://api.console.ory.sh/projects/${projectId}`,
     {
-      name: 'ory-keto',
+      name: process.env.PROJECT_NAME,
       services: {
         permission: {
           config: {
@@ -127,7 +128,6 @@ const extractAndUpdateIdentitySchema = async(projectConfig: any, encodeIdentityS
     "default_schema_id": "custom-1",
     schemas: newSchema
   }
-  console.log({ config: {...config, identity: newIdentity} })
   return { config: {...config, identity: newIdentity} }
 }
 
