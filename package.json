@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@ory/keto-namespace-types": "^0.11.0-alpha.0",
+    "axios": "^1.3.4",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {

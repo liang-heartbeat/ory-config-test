@@ -71,3 +71,5 @@ ory patch identity-config {your-project-id} \
 
 8. TODO: How to do permission check? Do we encode all the permissions of one user in jwt token format and store it cookie after user login? Or do we call API to check permission each time when user request to access specific resources?
 
+9. references
+[Manage Ory Network projects using the API](https://www.ory.sh/projects-api-management-guide/)
