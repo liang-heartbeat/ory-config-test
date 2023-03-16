@@ -2,7 +2,10 @@ import { Namespace, SubjectSet, Context } from "@ory/keto-namespace-types"
 
 
 class Actor implements Namespace { 
-
+  related: {
+    user: (Actor)[]
+    robot: (Actor)[]
+  }
 }
 
 // It is used to group actors. Group has similar meaning of role
