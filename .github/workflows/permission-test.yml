@@ -2,6 +2,10 @@ name: permission test stuff
 
 on: [push]
 
+env:
+  USER_NAME: '${{secrets.USER_NAME}}'
+  PASSWORD: '${{secrets.PASSWORD}}'
+
 jobs:
   PlayAction:
     runs-on: ubuntu-latest
@@ -21,4 +25,4 @@ jobs:
         run: npm install
 
       - name: Generate permission config file
-        run: USER_NAME=${{secrets.USER_NAME}} PASSWORD=${{secrets.PASSWORD}} npm run generate
+        run: USER_NAME=$USER_NAME PASSWORD=$PASSWORD npm run generate
