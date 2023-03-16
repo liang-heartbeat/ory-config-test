@@ -7,12 +7,13 @@ const main = async () => {
   console.log('test without setting')
   console.log(process.env.USER_NAME);
   console.log(process.env.PASSWORD);
+  console.log(process.env.PROJECTID);
 
 
   const sessionToken = await getSessionToken();
   const permissionRuleBase64 = await encodePermissionRule();
   // TODO: replace projectId 
-  await updateProjectConfig('143f18ba-304b-40d2-8894-f479b1007961', sessionToken, permissionRuleBase64)
+  await updateProjectConfig(process.env.PROJECTID?? "", sessionToken, permissionRuleBase64)
 };
 
 // 1. get session_token
@@ -30,15 +31,13 @@ const getSessionToken = async () => {
       password: `${process.env.PASSWORD}`,
     }
   );
-
-  console.log(login.data)
   return login.data.session_token;
 };
 
 // 2. encode new config file
 // 2.1 encode permission rule definition
 const encodePermissionRule = async() => {
-  const filePath = path.resolve(__dirname, 'permissionRuleTest.ts');
+  const filePath = path.resolve(__dirname, 'permission/permissionRule.ts');
   const encodedRule = await fs.promises.readFile(filePath, { encoding: 'base64' });
   return encodedRule
 };
@@ -46,7 +45,7 @@ const encodePermissionRule = async() => {
 // 3. encode new config file
 // 3.1 update project configuration
 const updateProjectConfig = async (projectId: string, sessionToken: string, permissionConfig: string) => { 
-    const updateProjectConfig = await axios.put(
+    await axios.put(
     `https://api.console.ory.sh/projects/${projectId}`,
     {
       name: 'ory-keto',
@@ -73,3 +72,5 @@ const updateProjectConfig = async (projectId: string, sessionToken: string, perm
 
 
 main();
+
+// TODO: promise all for update config and update init data(relationship tuple, sessin data)
