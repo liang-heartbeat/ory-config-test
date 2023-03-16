@@ -16,25 +16,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      
-      - name: Install ory
-        run: curl https://raw.githubusercontent.com/ory/meta/master/install.sh | sh -s ory
-
-      - name: Move ory
-        run: sudo mv ./bin/ory /usr/local/bin/
-
-      - name: Test ory
-        run: ory help
 
       - name: Install package
         run: npm install
 
       - name: Generate permission config file
-        run: npm run generate
-    
-      - name: Update permission config file
-        run:  ory update permission-config 143f18ba-304b-40d2-8894-f479b1007961 --file ./src/permission-config.json 
-
-      - name: Remove permission config file
-        run:  rm -- ./src/permission-config.json
-    
+        run: USER_NAME=secrets.USER_NAME PASSWORD=secrets.PASSWORD npm run generate
