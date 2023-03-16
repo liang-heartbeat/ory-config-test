@@ -28,9 +28,9 @@ const getSessionToken = async () => {
   const login = await axios.post(
     `https://project.console.ory.sh/self-service/login?flow=${loginFlow.data.id}`,
     {
-      identifier: 'zhang@heartbeat-med.de',
+      identifier: `${replace_by_username_or_email}`,
       method: 'password',
-      password: 'A7TAdYCoiSjz',
+      password: `${replace_by_password}`,
     }
   );
 
@@ -89,9 +89,9 @@ const updateProjectConfig = async (projectId: string, sessionToken: string, perm
 //   const loginProcess = await frontendApi.updateLoginFlow({
 //     flow: loginFlow.data.id,
 //     updateLoginFlowBody: {
-//       identifier: 'zhang@heartbeat-med.de',
-//       method: 'password',
-//       password: 'A7TAdYCoiSjz',
+//       identifier: '',
+//       method: '',
+//       password: '',
 //     },
 //   });
 //   console.log('------'.repeat(6));
