@@ -2,12 +2,6 @@ name: permission test stuff
 
 on: [push]
 
-env:
-  USER_NAME: '${{secrets.USER_NAME}}'
-  PASSWORD: '${{secrets.PASSWORD}}'
-  PROJECTID: '${{vars.PROJECTID}}'
-  PROJECT_SLUG: '${{vars.PROJECT_SLUG}}'
-  PROJECT_NAME: '${{vars.PROJECT_NAME}}'
 
 jobs:
   PlayAction:
