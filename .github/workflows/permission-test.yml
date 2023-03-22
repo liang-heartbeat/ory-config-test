@@ -30,7 +30,6 @@ jobs:
           PROJECTID: '${{vars.PROJECTID_B}}'
           PROJECT_SLUG: '${{vars.PROJECT_SLUG_B}}'
           PROJECT_NAME: '${{vars.PROJECT_NAME_B}}'
-        run: npm run update
         if: ${{ github.ref == 'refs/heads/main' }}
         env:
           USER_NAME: '${{secrets.USER_NAME}}'
