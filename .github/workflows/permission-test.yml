@@ -22,7 +22,6 @@ jobs:
         run: npm install
 
       - name: Update Config file
-        uses: rlespinasse/github-slug-action@v3.x
       - if: ${{ github.ref != 'refs/heads/main' }}
         env:
           USER_NAME: '${{secrets.USER_NAME}}'
